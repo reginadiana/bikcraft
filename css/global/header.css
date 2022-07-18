@@ -1,0 +1,78 @@
+.header__bg {
+  background-color: var(--black);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--gap-20);
+  /* Quando chegar aos 1200, 
+  o header será centralizado */
+  max-width: 1200px;
+  margin: auto;
+  flex-wrap: wrap;
+  gap: var(--gap-40);
+}
+
+.header__menu {
+  display: flex;
+  /* Espaçamento entre os itens filhos */
+  gap: var(--gap-40);
+  flex-wrap: wrap;
+}
+
+.menu__link {
+  /* Aumenta área de contato, melhora usabilidade */
+  padding: var(--gap-16) 0;
+  display: inline-block;
+  color: var(--white);
+  font-size: 18px;
+  position: relative;
+}
+
+@media (max-width: 600px) {
+  .header__menu {
+    gap: var(--gap-12);
+  }
+
+  .menu__link {
+    padding: var(--gap-8) var(--gap-12);
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 800px) {
+  .header__menu {
+    gap: var(--gap-20);
+  }
+
+  .menu__link {
+    background-color: var(--black-11);
+    padding: var(--gap-12) var(--gap-16);
+    border-radius: var(--gap-4);
+  }
+
+  .menu__link:hover {
+    background-color: var(--nightRider);
+  }
+}
+
+@media (min-width: 800px) {
+  .menu__link::after {
+    content: "";
+    display: block;
+    height: 2px;
+    width: 0;
+    background-color: var(--white);
+    margin-top: var(--gap-4);
+    /* Faz a 'magica' de efeito */
+    transition: 0.3s;
+    position: absolute;
+    left: 0;
+  }
+
+  .menu__link:hover::after {
+    width: 100%;
+  }
+}
