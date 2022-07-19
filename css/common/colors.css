@@ -18,3 +18,7 @@
   --rawUmber: #664400;
   --blackMagic: #332200;
 }
+
+.color--selective-yellow {
+  color: var(--selectiveYellow);
+}

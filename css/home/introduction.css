@@ -1,0 +1,125 @@
+.introduction__bg {
+  background-color: var(--black);
+  color: var(--white);
+  /* Dá o feito de vazamento da imagem.
+  A propriedade inset indica que a sombra será 
+  adicionada dentro do elemento */
+  box-shadow: inset 0 -120px 0 white;
+}
+
+.introduction {
+  display: grid;
+  /* Zera espaçamento entre linhas 
+  e adiciona 40px de espaçamento
+  entre colunas */
+  gap: 0 var(--gap-40);
+  /* Alina o conteúdo com o menu */
+  max-width: 1200px;
+  padding: 0 var(--gap-20);
+  margin: auto;
+}
+
+.introduction__content {
+  /* Alinha elementos da primeira coluna para o final*/
+  align-self: end;
+}
+
+.content__title {
+  font-size: 64px;
+  /* Adotar medida relativa ao espaçamento entre linhas, 
+  para que ao mudar o font-size, este valor continue
+  proporcional.
+  Dica: esse valor é dado no figma */
+  line-height: 1.12;
+  /* Adotar sempre o bottom para 
+  espaçamentos a fim de padronização*/
+  margin-bottom: var(--gap-32);
+}
+
+.content__message {
+  margin-bottom: var(--gap-20);
+  font-size: 24px;
+  line-height: 1.5;
+  color: var(--pinkSwan);
+}
+
+.content__link {
+  display: inline-block;
+  color: var(--rawUmber);
+  font-size: 18px;
+  line-height: 1.3;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: var(--gap-16) var(--gap-32);
+  background: linear-gradient(var(--selectiveYellow), #f2a50c);
+  border-radius: 5px;
+  /*
+    1. Direção de x
+    2. Direção de y
+    3. Efeito de blur/espalhamento
+    4. Por padrão, o box é do mesmo tamanho do elemento,
+    mas podemos definir um valor direferente
+    5. Cor da sombra
+  */
+  box-shadow: 0 1 2 0 rgba(0, 0, 0, 0.1);
+}
+
+.content__link:hover {
+  background: linear-gradient(var(--selectiveYellow), #e59317);
+}
+
+.introduction__img {
+  border-radius: 5px;
+  object-fit: cover;
+}
+
+@media (max-width: 600px) {
+  .content__link {
+    padding: var(--gap-12) var(--gap-16);
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 800px) {
+  .introduction {
+    /* Distribui igualmente em 2 colunas */
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .introduction__content {
+    /* Compensa vazamento */
+    padding-bottom: calc(var(--gap-80) + 120px);
+  }
+}
+
+@media (max-width: 800px) {
+  .introduction__bg {
+    background-color: var(--black-11);
+    padding-top: var(--gap-40);
+    box-shadow: inset 0 -60px var(--white);
+  }
+
+  .introduction {
+    gap: var(--gap-32);
+  }
+
+  .content__title {
+    font-size: 32px;
+    margin-bottom: 16px;
+  }
+
+  .introduction__img {
+    height: 300px;
+    width: 100%;
+  }
+}
+
+@media (max-width: 1200px) {
+  .content__title {
+    font-size: 48px;
+  }
+
+  .content__message {
+    font-size: 18px;
+  }
+}

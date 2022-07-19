@@ -1,3 +1,5 @@
+/* Alguns browsers já bloqueiam tipografias instaladas no sistema */
+
 .font-1-xs {
   font: 500 0.75rem/1.35 "Poppins", sans-serif;
 }
